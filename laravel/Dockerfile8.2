@@ -1,0 +1,23 @@
+FROM php:8.2-fpm
+
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    curl \
+    unzip
+# Install PHP SQL Server connection    
+#RUN apt-get install -y freetds-dev && docker-php-ext-install pdo_dblib
+
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install extensions
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+WORKDIR /var/www/html
+
