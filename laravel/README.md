@@ -47,30 +47,32 @@ To use this example, follow these steps:
     cd docker-compose-examples/laravel
     ```
 
-3. Run `Docker Compose` :
+
+3. make new fresh laravel project or git clone your project (make folder name laravel-app) and skip this step:
 
     ```bash
-    docker compose up -d
+    docker run --rm --interactive --tty --volume $PWD:/app composer create-project laravel/laravel laravel-app
     ```
 
 4. go to Project folder:
 
     ```bash
-    cd src
+    cd laravel-app
     ```
-
-5. make new fresh laravel project or git clone you project and skip this step:
-
-    ```bash
-    docker run --rm --interactive --tty --volume $PWD:/app composer create-project laravel/laravel .
-    ```
-
-6. or git clone you project and run:
+    
+5. install laravel packages :
 
     ```bash
     docker run --rm --interactive --tty --volume $PWD:/app composer install
     ```
 
+6. Run `Docker Compose` :
+
+    ```bash
+    docker compose up -d
+    ```
+
+7. open browser  `(http://localhost:8080/)` :
 
 ## Directory Structure
 
@@ -80,13 +82,14 @@ The directory structure for this example is as follows:
 laravel/
 │
 ├── Dockerfile
-├── src/
+├── laravel-app/
 │   └── # Laravel application files
 │
 ├── dbdata/
 │   └── ... # mysql database files
 │
 ├── docker-compose.yml
+├── nginx.conf
 └── README.md
 ```
 
@@ -100,7 +103,7 @@ laravel/
 You can customize this example according to your requirements by modifying the following files:
 
 - **Dockerfile**: Customize the Dockerfile (Dockerfile8.2) for building the Laravel application container.
-- **src/**: Place your Laravel application files in this directory.
+- **laravel-app/**: Place your Laravel application files in this directory.
 - **docker-compose.yml**: Customize service names, ports, volumes, etc., according to your preferences.
 
 ## Contributing
