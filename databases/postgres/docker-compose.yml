@@ -1,0 +1,23 @@
+version: '3'
+services:
+
+  postgre_db:
+    container_name: postgre
+    tty: true
+    image: postgre
+    restart: unless-stopped
+    volumes:
+      - ./data/pgdata:/var/lib/postgresql/data
+
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRE_PASSWORD: pass
+    networks:
+      - databases-network
+
+#Docker Networks
+networks:
+  databases-network:
+    driver: bridge
+
