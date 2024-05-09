@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  #MySQL Service
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      # MYSQL_DATABASE: test-db
+      MYSQL_ROOT_PASSWORD: pass
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./data/dbdata:/var/lib/mysql/
+      - ./data/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - databases-network
+
+#Docker Networks
+networks:
+  databases-network:
+    driver: bridge
+
