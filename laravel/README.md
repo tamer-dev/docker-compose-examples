@@ -1,6 +1,3 @@
-Certainly! Let's enhance the README.md file for the Laravel example in the internal folder:
-
----
 
 # Docker Compose Example for Laravel
 
@@ -17,8 +14,6 @@ Welcome to the Docker Compose example for Laravel! This example demonstrates how
   - [Customization](#customization)
   - [Contributing](#contributing)
   - [License](#license)
-- [Description](#description)
-    - [Quick Start](#quick-start)
 
 ## Introduction
 
@@ -84,14 +79,12 @@ The directory structure for this example is as follows:
 ```
 laravel/
 │
-├── laravel-app/
-│   ├── Dockerfile
-│   ├── src/
-│   │   └── # Laravel application files
-│   └── ...
+├── Dockerfile
+├── src/
+│   └── # Laravel application files
 │
-├── mysql-db/
-│   └── ...
+├── dbdata/
+│   └── ... # mysql database files
 │
 ├── docker-compose.yml
 └── README.md
@@ -106,8 +99,8 @@ laravel/
 
 You can customize this example according to your requirements by modifying the following files:
 
-- **laravel-app/Dockerfile**: Customize the Dockerfile for building the Laravel application container.
-- **laravel-app/src/**: Place your Laravel application files in this directory.
+- **Dockerfile**: Customize the Dockerfile (Dockerfile8.2) for building the Laravel application container.
+- **src/**: Place your Laravel application files in this directory.
 - **docker-compose.yml**: Customize service names, ports, volumes, etc., according to your preferences.
 
 ## Contributing
@@ -121,24 +114,3 @@ This example is licensed under the [MIT License](../LICENSE), allowing you to us
 ---
 
 Feel free to adjust any details or add specific instructions relevant to your Laravel example!
-# Description
-Run Fresh Laravel App
-
-### Quick Start
-
-1. Run `Docker Compose` dependencies.
-   
-        docker compose up -d
-
-2. go to Project folder.
-   
-        cd src
-
-3. make new fresh laravel project.
-   
-        docker run --rm --interactive --tty --volume $PWD:/app composer create-project laravel/laravel .
-
-    or git clone you project and run
-
-        docker run --rm --interactive --tty --volume $PWD:/app composer install
-       
