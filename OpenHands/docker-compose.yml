@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  openhands:
+    image: docker.all-hands.dev/all-hands-ai/openhands:0.30
+    container_name: openhands-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/.openhands-state:/.openhands-state # Consider using an absolute path or environment variable here
+    environment:
+      - SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.30-nikolaik
+      - LOG_ALL_EVENTS=true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # Equivalent to --pull=always in docker run
+    pull_policy: always
+    # If you need interactive terminal access like `docker run -it`, uncomment these:
+    # stdin_open: true
+    # tty: true
