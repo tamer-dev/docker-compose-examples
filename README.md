@@ -51,6 +51,8 @@ Browse through the following examples to learn more about using Docker Compose f
 
 - [Ollama (AI): Large Language Models with Open WebUI](ai/ollama/)
 - [Prometheus & Grafana (Monitoring): Full-Stack Observability with Node Exporter](monitoring/prometheus-grafana/)
+- [Redis (Messaging & Caching): In-Memory Store with Redis Commander](messaging/redis/)
+- [RabbitMQ (Messaging): Message Broker with Management Dashboard](messaging/rabbitmq/)
 - [Laravel (PHP): Web Application with NGINX and PHP Laravel](laravel/)
 - [mySQL (Database): Database Service for mySQL](databases/mysql/)
 - [PostgreSQL (Database): Database Service for PostgreSQL](databases/postgres/)
