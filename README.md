@@ -49,6 +49,8 @@ To use the examples in this repository, follow these steps:
 
 Browse through the following examples to learn more about using Docker Compose for different scenarios:
 
+- [Ollama (AI): Large Language Models with Open WebUI](ai/ollama/)
+- [Prometheus & Grafana (Monitoring): Full-Stack Observability with Node Exporter](monitoring/prometheus-grafana/)
 - [Laravel (PHP): Web Application with NGINX and PHP Laravel](laravel/)
 - [mySQL (Database): Database Service for mySQL](databases/mysql/)
 - [PostgreSQL (Database): Database Service for PostgreSQL](databases/postgres/)
