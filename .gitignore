@@ -1,7 +1,19 @@
+# OS files
+.DS_Store
+**/.DS_Store
+
+# Database data directories
 databases/mysql/data
 databases/postgres/data
 databases/mssql/*.bak
-jenkins/jenkins_home
-.DS_Store
+
+# CI/CD
+ci-cd/jenkins/jenkins_home
+
+# Automation
 n8n/n8n_data
 n8n/certs
+
+# Docker volumes (if mounted locally)
+**/data/
+!**/data/.gitkeep

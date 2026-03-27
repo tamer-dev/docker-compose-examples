@@ -1,4 +1,3 @@
-
 # Docker Compose Examples
 
 Welcome to Docker Compose Examples repository! This collection provides a set of practical examples to help you understand and utilize Docker Compose effectively in your projects. Each example is designed to demonstrate different use cases and configurations, serving as a reference for both beginners and experienced users alike.
@@ -49,17 +48,39 @@ To use the examples in this repository, follow these steps:
 
 Browse through the following examples to learn more about using Docker Compose for different scenarios:
 
-- [Ollama (AI): Large Language Models with Open WebUI](ai/ollama/)
-- [Prometheus & Grafana (Monitoring): Full-Stack Observability with Node Exporter](monitoring/prometheus-grafana/)
-- [Redis (Messaging & Caching): In-Memory Store with Redis Commander](messaging/redis/)
-- [RabbitMQ (Messaging): Message Broker with Management Dashboard](messaging/rabbitmq/)
-- [Laravel (PHP): Web Application with NGINX and PHP Laravel](laravel/)
-- [mySQL (Database): Database Service for mySQL](databases/mysql/)
-- [PostgreSQL (Database): Database Service for PostgreSQL](databases/postgres/)
+### 🤖 AI & Machine Learning
 
-<!-- - [Example 1: Web Application with NGINX and Flask](example1/)
-- [Example 2: Database Service with PostgreSQL](example2/)
-- [Example 3: Microservices Architecture with Node.js and Redis](example3/) -->
+- [Ollama: Large Language Models with Open WebUI](ai/ollama/)
+
+### 📊 Monitoring & Observability
+
+- [Prometheus & Grafana: Full-Stack Observability with Node Exporter & cAdvisor](monitoring/prometheus-grafana/)
+
+### 💬 Messaging
+
+- [RabbitMQ: Message Broker with Management Dashboard](messaging/rabbitmq/)
+
+### 🗄️ Databases
+
+- [MySQL: Database Service](databases/mysql/)
+- [PostgreSQL: Database Service](databases/postgres/)
+- [MongoDB: NoSQL Database Service](databases/mongodb/)
+- [MSSQL: Microsoft SQL Server](databases/mssql/)
+- [Redis: In-Memory Data Store](databases/redis/)
+
+### 🌐 PHP Web Applications
+
+- [Laravel: Web Application with NGINX and PHP](php/laravel/)
+- [WordPress: CMS with Database](php/wordpress/)
+
+### ⚙️ CI/CD & DevOps
+
+- [Jenkins: Automation Server](ci-cd/jenkins/)
+
+### 🔧 Automation & Workflow
+
+- [n8n: Workflow Automation Platform](n8n/)
+- [OpenHands: AI-Powered Development Agent](OpenHands/)
 
 Each example directory contains a README.md file with detailed instructions on how to build, run, and customize the Docker Compose configuration for that specific scenario.
 
