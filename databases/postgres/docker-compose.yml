@@ -4,15 +4,16 @@ services:
   postgre_db:
     container_name: postgre
     tty: true
-    image: postgre
+    image: postgres:latest
     restart: unless-stopped
     volumes:
       - ./data/pgdata:/var/lib/postgresql/data
-
     ports:
       - "5432:5432"
     environment:
-      POSTGRE_PASSWORD: pass
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
     networks:
       - databases-network
 

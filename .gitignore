@@ -1,3 +1,7 @@
 databases/mysql/data
+databases/postgres/data
+databases/mssql/*.bak
 jenkins/jenkins_home
 .DS_Store
+n8n/n8n_data
+n8n/certs
