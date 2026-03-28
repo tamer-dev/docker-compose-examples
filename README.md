@@ -70,8 +70,8 @@ Browse through the following examples to learn more about using Docker Compose f
 
 ### 🔍 Search & Indexing
 
-- [Meilisearch: Lightning-Fast Search Engine](search/meilisearch/)
-- [Elasticsearch & Kibana: Search & Analytics Platform](search/elasticsearch/)
+- [Meilisearch: Lightning-Fast Search Engine](search-indexing/meilisearch/)
+- [Elasticsearch & Kibana: Search & Analytics Platform](search-indexing/elasticsearch/)
 
 ### 🌐 PHP Web Applications
 
@@ -81,6 +81,10 @@ Browse through the following examples to learn more about using Docker Compose f
 ### ⚙️ CI/CD & DevOps
 
 - [Jenkins: Automation Server](ci-cd/jenkins/)
+
+### 🛠️ Developer Tools
+
+- [Portainer: Docker Management UI](devops-tools/portainer/)
 
 ### 🔧 Automation & Workflow
 
