@@ -68,6 +68,11 @@ Browse through the following examples to learn more about using Docker Compose f
 - [MSSQL: Microsoft SQL Server](databases/mssql/)
 - [Redis: In-Memory Data Store](databases/redis/)
 
+### 🔍 Search & Indexing
+
+- [Meilisearch: Lightning-Fast Search Engine](search/meilisearch/)
+- [Elasticsearch & Kibana: Search & Analytics Platform](search/elasticsearch/)
+
 ### 🌐 PHP Web Applications
 
 - [Laravel: Web Application with NGINX and PHP](php/laravel/)
