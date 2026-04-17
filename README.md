@@ -85,6 +85,7 @@ Browse through the following examples to learn more about using Docker Compose f
 ### 🛠️ Developer Tools
 
 - [Portainer: Docker Management UI](devops-tools/portainer/)
+- [Hoppscotch: Open-Source API Development Platform](devops-tools/hoppscotch/)
 
 ### 🔧 Automation & Workflow
 

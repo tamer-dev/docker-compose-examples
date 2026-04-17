@@ -1,0 +1,38 @@
+services:
+  hoppscotch:
+    image: hoppscotch/hoppscotch:latest
+    container_name: hoppscotch
+    ports:
+      - "3000:3000" # Web App
+      - "3170:3170" # Backend API
+      - "3100:3100" # Admin Dashboard
+    environment:
+      - PRODUCTION=true
+      - ALLOW_SECURE_COOKIES=false
+      - VITE_ALLOWED_AUTH_PROVIDERS=GITHUB,GOOGLE,MICROSOFT,EMAIL
+    restart: unless-stopped
+    networks:
+      - hoppscotch-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: hoppscotch-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: hoppscotch
+      POSTGRES_PASSWORD: hoppscotch
+      POSTGRES_DB: hoppscotch
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - hoppscotch-network
+
+volumes:
+  postgres_data:
+
+
+networks:
+  hoppscotch-network:
+    driver: bridge
