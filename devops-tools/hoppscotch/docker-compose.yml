@@ -3,14 +3,27 @@ services:
     image: hoppscotch/hoppscotch:latest
     container_name: hoppscotch
     ports:
-      - "3000:3000" # Web App
-      - "3170:3170" # Backend API
-      - "3100:3100" # Admin Dashboard
-    environment:
-      - PRODUCTION=true
-      - ALLOW_SECURE_COOKIES=false
-      - VITE_ALLOWED_AUTH_PROVIDERS=GITHUB,GOOGLE,MICROSOFT,EMAIL
+      - "3000:3000"
+      - "3170:3170"
+      - "3100:3100"
+    env_file:
+      - .env
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
     restart: unless-stopped
+    networks:
+      - hoppscotch-network
+
+  migrate:
+    image: hoppscotch/hoppscotch-backend:latest
+    container_name: hoppscotch-migrate
+    env_file:
+      - .env
+    command: sh -c "pnpm exec prisma migrate deploy"
+    depends_on:
+      postgres:
+        condition: service_healthy
     networks:
       - hoppscotch-network
 
@@ -24,13 +37,15 @@ services:
       POSTGRES_PASSWORD: hoppscotch
       POSTGRES_DB: hoppscotch
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U hoppscotch -d hoppscotch" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     restart: unless-stopped
     networks:
       - hoppscotch-network
-
-volumes:
-  postgres_data:
 
 
 networks:
