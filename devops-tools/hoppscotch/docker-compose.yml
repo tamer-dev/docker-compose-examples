@@ -3,7 +3,7 @@ services:
     image: hoppscotch/hoppscotch:latest
     container_name: hoppscotch
     ports:
-      - "80:3000"
+      - "3000:3000"
       - "3170:3170"
       - "3100:3100"
     env_file:
